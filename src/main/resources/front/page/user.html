@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no,minimal-ui">
     <title>菩提阁</title>
-    <link rel="icon" href="../images/favico.ico">
+    <link rel="icon" href="./../images/favico.ico">
     <!--element-ui的样式-->
     <link rel="stylesheet" href="../../backend/plugins/element-ui/index.css" />
     <!-- 引入样式  -->
@@ -13,7 +13,7 @@
     <!--引入vant样式-->
     <link rel="stylesheet" href="../styles/vant.min.css"/>
     <!--本页面内容的样式-->
-    <link rel="stylesheet" href="../styles/user.css" />
+    <link rel="stylesheet" href="./../styles/user.css" />
 </head>
 <body>
     <div id="user" class="app">
@@ -22,9 +22,9 @@
                 <i class="el-icon-arrow-left" @click="goBack"></i>个人中心
             </div>
             <div class="divUser">
-                <img src="../images/headPage.png"/>
+                <img src="./../images/headPage.png"/>
                 <div class="desc">
-                    <div class="divName">林之迷 <img src="../images/women.png"/></div>
+                    <div class="divName">林之迷 <img src="./../images/women.png"/></div>
                     <div class="divPhone">{{userPhone}}</div>
                 </div>
             </div>
@@ -32,13 +32,13 @@
         <div class="divContent">
             <div class="divLinks">
                 <div class="item" @click="toAddressPage">
-                    <img src="../images/locations.png"/>
+                    <img src="./../images/locations.png"/>
                     <span>地址管理</span>
                     <i class="el-icon-arrow-right"></i>
                 </div>
                 <div class="divSplit"></div>
                 <div class="item" @click="toOrderPage">
-                    <img src="../images/orders.png"/>
+                    <img src="./../images/orders.png"/>
                     <span>历史订单</span>
                     <i class="el-icon-arrow-right"></i>
                 </div>
@@ -74,14 +74,14 @@
     <!-- 引入组件库 -->
     <script src="../../backend/plugins/element-ui/index.js"></script>
     <!-- 引入vant组件 -->
-    <script src="../js/vant.min.js"></script>
+    <script src="./../js/vant.min.js"></script>    
     <!--不同屏幕尺寸根字体设置-->
-    <script src="../js/base.js"></script>
+    <script src="./../js/base.js"></script>
     <!-- 引入axios -->
     <script src="../../backend/plugins/axios/axios.min.js"></script>
-    <script src="../js/request.js"></script>
-    <script src="../api/order.js"></script>
-    <script src="../api/login.js"></script>
+    <script src="./../js/request.js"></script>
+    <script src="./../api/order.js"></script>
+    <script src="./../api/login.js"></script>
     <script>
         new Vue({
             el:"#user",
@@ -116,12 +116,12 @@
                 },
                 toAddressPage(){
                     window.requestAnimationFrame(()=>{
-                        window.location.href = 'address.html'
+                        window.location.href = '/front/page/address.html'
                     })  
                 },
                 toOrderPage(){
                     window.requestAnimationFrame(()=>{
-                        window.location.href = 'order.html'
+                        window.location.href = '/front/page/order.html'
                     }) 
                 },
                 initData(){
@@ -172,7 +172,7 @@
                     const res = await orderAgainApi({id:this.order[0].id})
                     if(res.code === 1){
                         window.requestAnimationFrame(()=>{
-                            window.location.href = '../index.html'
+                            window.location.href = '/front/index.html'
                         }) 
                     }else{
                         this.$notify({ type:'warning', message:res.msg});
@@ -182,7 +182,7 @@
                     const res = await loginoutApi()
                     if(res.code === 1){
                         window.requestAnimationFrame(()=>{
-                            window.location.href = 'login.html'
+                            window.location.href = '/front/page/login.html'
                         }) 
                     }else{
                         this.$notify({ type:'warning', message:res.msg});

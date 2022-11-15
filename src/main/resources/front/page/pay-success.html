@@ -5,15 +5,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no,minimal-ui">
         <title>菩提阁</title>
-        <link rel="icon" href="../images/favico.ico">
+        <link rel="icon" href="./../images/favico.ico">
         <!--不同屏幕尺寸根字体设置-->
-        <script src="../js/base.js"></script>
+        <script src="./../js/base.js"></script>
         <!--element-ui的样式-->
         <link rel="stylesheet" href="../../backend/plugins/element-ui/index.css" />
         <!-- 引入样式  -->
         <link rel="stylesheet" href="../styles/index.css" />
         <!--本页面内容的样式-->
-        <link rel="stylesheet" href="../styles/pay-success.css" />
+        <link rel="stylesheet" href="./../styles/pay-success.css" />
     </head>
     <body>
         <div id="pay_success" class="app">
@@ -21,11 +21,11 @@
                 <div class="divTitle">
                     <i class="el-icon-arrow-left" @click="goBack"></i>
                     菩提阁
-                    <img src="../images/home.png" @click="toMainPage"/>
+                    <img src="./../images/home.png" @click="toMainPage"/>
                 </div>
             </div>
             <div class="divContent">
-                <img src="../images/success.png"/>
+                <img src="./../images/success.png"/>
                 <div class="divSuccess">下单成功</div>
                 <div class="divDesc">预计{{finishTime}}到达</div>
                 <div class="divDesc1">后厨正在加紧制作中，请耐心等待~</div>
@@ -38,7 +38,7 @@
         <script src="../../backend/plugins/element-ui/index.js"></script>
         <!-- 引入axios -->
         <script src="../../backend/plugins/axios/axios.min.js"></script>
-        <script src="../js/request.js"></script>
+        <script src="./../js/request.js"></script>
         <script>
         new Vue({
             el:"#pay_success",

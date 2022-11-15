@@ -82,14 +82,14 @@
 #address_edit .divContent .divItem span i {
   width: 16rem;
   height: 16rem;
-  background: url(../images/checked_false.png);
+  background: url(./../images/checked_false.png);
   display: inline-block;
   background-size: cover;
   vertical-align: sub;
 }
 
 #address_edit .divContent .divItem span .iActive {
-  background: url(../images/checked_true.png);
+  background: url(./../images/checked_true.png);
   background-size: cover;
 }
 

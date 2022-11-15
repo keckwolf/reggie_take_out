@@ -8,7 +8,7 @@
     <title>菩提阁</title>
     <link rel="icon" href="images/favico.ico">
     <!--不同屏幕尺寸根字体设置-->
-    <script src="js/base.js"></script>
+    <script src="./js/base.js"></script>
     <!--element-ui的样式-->
     <link rel="stylesheet" href="../backend/plugins/element-ui/index.css" />
     <!--引入vant样式-->
@@ -21,17 +21,17 @@
   <body>
     <div id="main" class="app">
       <div class="divHead">
-        <img src="images/user.png" @click="toUserPage"/>
+        <img src="./images/user.png" @click="toUserPage"/>
       </div>
       <div class="divTitle">
         <div class="divStatic">
-          <img src="images/logo.png" class="logo"/>
+          <img src="./images/logo.png"  class="logo"/>
           <div class="divDesc">
             <div class="divName">菩提阁餐厅</div>
             <div class="divSend">
-                <span><img src="images/time.png"/> 距离1.5km</span>
-                <span><img src="images/money.png"/> 配送费6元</span>
-                <span><img src="images/location.png"/> 预计时长12min</span>
+                <span><img src="./images/time.png"/> 距离1.5km</span>
+                <span><img src="./images/money.png"/> 配送费6元</span>
+                <span><img src="./images/location.png"/> 预计时长12min</span>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@
             <div class="divItem" v-for="(item,index) in dishList" :key="index" @click="dishDetails(item)">
               <el-image :src="imgPathConvert(item.image)" >
                 <div slot="error" class="image-slot">
-                  <img src="images/noImg.png"/>
+                  <img src="./images/noImg.png"/>
                 </div>
               </el-image>
               <div>
@@ -60,12 +60,12 @@
                 <div class="divBottom"><span>￥</span><span>{{item.price/100}}</span></div>
                 <div class="divNum">
                   <div class="divSubtract" v-if="item.number > 0">
-                    <img src="images/subtract.png" @click.prevent.stop="subtractCart(item)"/>
+                    <img src="./images/subtract.png" @click.prevent.stop="subtractCart(item)"/>
                   </div>
                   <div class="divDishNum">{{item.number}}</div>
                   <div class="divTypes" v-if="item.flavors && item.flavors.length > 0 && !item.number " @click.prevent.stop="chooseFlavorClick(item)">选择规格</div>
                   <div class="divAdd" v-else>
-                    <img src="images/add.png" @click.prevent.stop="addCart(item)"/>
+                    <img src="./images/add.png" @click.prevent.stop="addCart(item)"/>
                   </div>
                 </div>
               </div>
@@ -105,7 +105,7 @@
             <div @click="dialogFlavorAddCart">加入购物车</div>
           </div>
           <div class="divFlavorClose" @click="dialogFlavor.show = false">
-            <img src="images/close.png"/>
+            <img src="./images/close.png"/>
           </div>
         </van-dialog>
         <van-popup v-model="cartDialogShow" position="bottom" :style="{ height: '50%' }" class="dialogCart">
@@ -119,7 +119,7 @@
             <div v-for="item in cartData" :key="item.id" class="divCartItem">
               <el-image :src="imgPathConvert(item.image)" >
                 <div slot="error" class="image-slot">
-                  <img src="images/noImg.png"/>
+                  <img src="./images/noImg.png"/>
                 </div>
               </el-image>
               <div class="divDesc">
@@ -129,11 +129,11 @@
               </div>
               <div class="divNum">
                 <div class="divSubtract">
-                  <img src="images/subtract.png" @click="cartNumberSubtract(item)"/>
+                  <img src="./images/subtract.png" @click="cartNumberSubtract(item)"/>
                 </div>
                 <div class="divDishNum">{{item.number}}</div>
                 <div class="divAdd">
-                  <img src="images/add.png" @click="cartNumAdd(item)"/>
+                  <img src="./images/add.png" @click="cartNumAdd(item)"/>
                 </div>
               </div>
               <div class="divSplit"></div>
@@ -149,7 +149,7 @@
           <div class="divContainer">
             <el-image :src="imgPathConvert(detailsDialog.item.image)" >
               <div slot="error" class="image-slot">
-                <img src="images/noImg.png"/>
+                <img src="./images/noImg.png"/>
               </div>
             </el-image>
             <div class="title">{{detailsDialog.item.name}}</div>
@@ -161,17 +161,17 @@
             </div>
             <div class="right">
                 <div class="divSubtract" v-if="detailsDialog.item.number > 0">
-                  <img src="images/subtract.png" @click="subtractCart(detailsDialog.item)"/>
+                  <img src="./images/subtract.png" @click="subtractCart(detailsDialog.item)"/>
                 </div>
                 <div class="divDishNum">{{detailsDialog.item.number}}</div>
                 <div class="divTypes" v-if="detailsDialog.item.flavors && detailsDialog.item.flavors.length > 0 && !detailsDialog.item.number " @click ="chooseFlavorClick(detailsDialog.item)">选择规格</div>
                 <div class="divAdd" v-else>
-                  <img src="images/add.png" @click="addCart(detailsDialog.item)"/>
+                  <img src="./images/add.png" @click="addCart(detailsDialog.item)"/>
                 </div>
             </div>
           </div>
           <div class="detailsDialogClose" @click="detailsDialog.show = false">
-            <img src="images/close.png"/>
+            <img src="./images/close.png"/>
           </div>
         </van-dialog>
         <van-dialog v-model="setMealDialog.show" 
@@ -185,7 +185,7 @@
               <div class="item" v-for="(item,index) in setMealDialog.item.list" :key="index">
                 <el-image :src="imgPathConvert(item.image)">
                   <div slot="error" class="image-slot">
-                    <img src="images/noImg.png"/>
+                    <img src="./images/noImg.png"/>
                   </div>
                 </el-image>
                 <div class="divSubTitle">{{item.name + '(' + item.copies + '份)' }}
@@ -202,17 +202,17 @@
               </div>
               <div class="right">
                   <div class="divSubtract" v-if="setMealDialog.item.number > 0">
-                    <img src="images/subtract.png" @click="subtractCart(setMealDialog.item)"/>
+                    <img src="./images/subtract.png" @click="subtractCart(setMealDialog.item)"/>
                   </div>
                   <div class="divDishNum">{{setMealDialog.item.number}}</div>
                   <div class="divAdd" v-if="setMealDialog.item.number">
-                    <img src="images/add.png" @click="addCart(setMealDialog.item)"/>
+                    <img src="./images/add.png" @click="addCart(setMealDialog.item)"/>
                   </div>
                   <div class="addCart"  @click="addCart(setMealDialog.item)" v-if="!setMealDialog.item.number">加入购物车</div>
               </div>
           </div>
           <div class="detailsDialogClose" @click="setMealDialog.show = false">
-            <img src="images/close.png"/>
+            <img src="./images/close.png"/>
           </div>
         </van-dialog>
     </div>
@@ -221,12 +221,12 @@
         <!-- 引入组件库 -->
         <script src="../backend/plugins/element-ui/index.js"></script>
         <!-- 引入vant样式 -->
-        <script src="js/vant.min.js"></script>
+        <script src="./js/vant.min.js"></script>        
         <!-- 引入axios -->
         <script src="../backend/plugins/axios/axios.min.js"></script>
-        <script src="js/request.js"></script>
-        <script src="js/common.js"></script>
-        <script src="api/main.js"></script>
+        <script src="./js/request.js"></script>
+        <script src="./js/common.js"></script>
+        <script src="./api/main.js"></script>
   </body>
   <script>
       new Vue({
@@ -568,13 +568,13 @@
             toAddOrderPage(){
               if(this.cartData.length > 0){
                 window.requestAnimationFrame(()=>{
-                  window.location.href ='page/add-order.html'
+                  window.location.href ='/front/page/add-order.html'
                 })
               }
             },
             toUserPage(){
               window.requestAnimationFrame(()=>{
-                window.location.href= 'page/user.html'
+                window.location.href= '/front/page/user.html'
               })
             },
             async dishDetails(item){
